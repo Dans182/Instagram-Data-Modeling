@@ -3,7 +3,7 @@
 
 Prueba
 
-<img src="/DataBaseModelling.jpg">
+<img src="./DataBaseModelling.jpg">
 
 
 

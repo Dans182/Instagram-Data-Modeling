@@ -43,10 +43,6 @@ class Follower(Base):
     user = relationship(User)
 
 
-
-
-
-
 ## Draw from SQLAlchemy base
 try:
     result = render_er(Base, 'diagram.png')

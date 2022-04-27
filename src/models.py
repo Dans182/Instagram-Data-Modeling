@@ -45,7 +45,8 @@ class Follower(Base):
     following = relationship(User)
 
 # ¿que es el BASE?
-#nullable=false ->
+# nullable=false -> es que es un campo que no puede dejarse vacio
+# Relationship hace referencia a la tabla a la que nos vamos a conectar
 
 ## Draw from SQLAlchemy base
 try:

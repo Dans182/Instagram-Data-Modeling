@@ -25,8 +25,38 @@ class Post(Base):
     user_id = Column(Integer, ForeignKey("user.id"))
     user = relationship(User)
 
-    def to_dict(self):
-        return {}
+class Comment(Base):
+    __tablename__ = 'comment'
+
+    id = Column(Integer, primary_key=True)
+    text = Column(String(250), nullable=False)
+    user_id = Column(Integer, ForeignKey("user.id"))
+    user = relationship(User)
+    post_id = Column(Integer, ForeignKey("post.id"))
+    post = relationship(Post)
+
+class Comment(Base):
+    __tablename__ = 'comment'
+
+    id = Column(Integer, primary_key=True)
+    text = Column(String(250), nullable=False)
+    user_id = Column(Integer, ForeignKey("user.id"))
+    user = relationship(User)
+    post_id = Column(Integer, ForeignKey("post.id"))
+    post = relationship(Post)
+
+class Follower(Base):
+    __tablename__ = 'follower'
+
+    id = Column(Integer, primary_key=True)
+    follower_id = Column(Integer, ForeignKey("user.id"))
+    following_id = Column(Integer, ForeignKey("user.id"))
+    following = relationship(User)
+
+
+
+
+
 
 ## Draw from SQLAlchemy base
 try:

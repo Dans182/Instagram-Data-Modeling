@@ -23,26 +23,26 @@ class Post(Base):
 
     id = Column(Integer, primary_key=True)
     text = Column(String(250), nullable=False)
-    user_id = Column(Integer, ForeignKey("user.id"))
-    user = relationship(User)
+    post_author_id = Column(Integer, ForeignKey("user.id"))
+    post_author = relationship(User)
 
 class Comment(Base):
     __tablename__ = 'comment'
 
     id = Column(Integer, primary_key=True)
     text = Column(String(250), nullable=False)
-    user_id = Column(Integer, ForeignKey("user.id"))
-    user = relationship(User)
+    comment_author_id = Column(Integer, ForeignKey("user.id"))
+    comment_author = relationship(User)
     post_id = Column(Integer, ForeignKey("post.id"))
     post = relationship(Post)
 
 class Follower(Base):
     __tablename__ = 'follower'
+    
     id = Column(Integer, primary_key=True)
     follower_id = Column(Integer, ForeignKey("user.id"))
-    follower = relationship(User)    
     following_id = Column(Integer, ForeignKey("user.id"))
-    following = relationship(User)
+    user = relationship(User)
 
 # ¿que es el BASE?
 # nullable=false -> es que es un campo que no puede dejarse vacio

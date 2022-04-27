@@ -22,6 +22,7 @@ class Post(Base):
     __tablename__ = 'post'
 
     id = Column(Integer, primary_key=True)
+    text = Column(String(250), nullable=False)
     user_id = Column(Integer, ForeignKey("user.id"))
     user = relationship(User)
 
@@ -39,9 +40,12 @@ class Follower(Base):
     __tablename__ = 'follower'
     id = Column(Integer, primary_key=True)
     follower_id = Column(Integer, ForeignKey("user.id"))
+    follower = relationship(User)    
     following_id = Column(Integer, ForeignKey("user.id"))
-    user = relationship(User)
+    following = relationship(User)
 
+# ¿que es el BASE?
+#nullable=false ->
 
 ## Draw from SQLAlchemy base
 try:

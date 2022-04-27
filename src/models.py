@@ -9,9 +9,8 @@ from eralchemy import render_er
 Base = declarative_base()
 
 class User(Base):
-    __tablename__ = 'person'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
+    __tablename__ = 'user'
+    
     id = Column(Integer, primary_key=True)
     username = Column(String(250), nullable=False, unique=True)
     name = Column(String(250), nullable=False)
@@ -21,10 +20,9 @@ class User(Base):
 
 class Post(Base):
     __tablename__ = 'post'
-    # Here we define columns for the table address.
-    # Notice that each column is also a normal Python instance attribute.
+
     id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey("User.id"))
+    user_id = Column(Integer, ForeignKey("user.id"))
     user = relationship(User)
 
     def to_dict(self):

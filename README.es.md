@@ -1,7 +1,7 @@
+En el repositorio actual, se debía crear el modelo de base de datos para instagram. Previamente, debíamos hacer un pequeño diagrama de lo que queremos representar, para posteriormente proceder a realizarlo en el boilerplate actual.
 
+Se recrearon 4 tablas (usuario, post, comentarios y followers), dentro de cada una, las distintas columnas con las propiedades que las componen, así como las relaciones que hay entre las tablas, entre Primary Key y las Foreign Keys.
 
-
-Prueba
 
 <img src="./DataBaseModelling.jpg">
 
